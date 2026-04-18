@@ -216,7 +216,7 @@ function ResultPanel({ sample, result }: { sample: DatasetSample; result: DqsRes
                     borderRadius: 8,
                     fontSize: 12,
                   }}
-                  formatter={(v: number, _n, p) => [`${v}/100`, (p.payload as {full:string}).full]}
+                  formatter={(v, _n, p) => [`${v}/100`, (p?.payload as {full:string})?.full ?? ""]}
                   labelFormatter={() => ""}
                 />
                 <Bar dataKey="score" radius={[6, 6, 0, 0]}>
